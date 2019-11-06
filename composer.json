@@ -1,0 +1,21 @@
+{
+    "name": "ctlact/ctlact",
+    "description": "get all controllers and actions",
+    "type": "lib",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lee Toug",
+            "email": "LeeToug@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CtlAct\\": "src/"
+        }
+    }
+}
