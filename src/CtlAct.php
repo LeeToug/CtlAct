@@ -24,6 +24,7 @@ class CtlAct
         }
         //找到所有action操作方法
         $actions = array();
+        //这里要添加助手方法controller（）
         $actions[] = get_class_methods(\controller($model."/".$controller));
         //过滤掉定义的操作方法
         $attr = array();
