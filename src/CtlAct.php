@@ -40,12 +40,13 @@ class CtlAct
     }
 
     /**
+     * @param $path 相对路径
      * @return array
-     * 获取所有控制器
+     * 获取控制器controllers
      */
-    function getctl(){
+    function getctl($path){
         //查询管理端模块所有控制器
-        $pathList = glob("../application/index/controller". '/*.php');
+        $pathList = glob($path. '/*.php');
         foreach($pathList as $key => $value) {
             $controllers[] = basename($value, '.php');
         }
