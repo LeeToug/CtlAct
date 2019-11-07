@@ -11,7 +11,7 @@ class CtlAct
      * @param $controller
      * @param array $filteraction
      * @return array
-     * tp5获取所有控制器的方法
+     * 获取所有控制器的方法
      */
     function getaction($model,$controller,$filteraction=[]){
         //需要过滤的action方法
@@ -24,8 +24,8 @@ class CtlAct
         }
         //找到所有action操作方法
         $actions = array();
-        //这里要添加助手方法controller（）
-        $actions[] = get_class_methods(\controller($model."/".$controller));
+
+        $actions[] = get_class_methods($model."/".$controller);
         //过滤掉定义的操作方法
         $attr = array();
         foreach ($actions as $key=>$val){
@@ -53,4 +53,5 @@ class CtlAct
         $newctl = array_diff($controllers,$cro_filter);
         return $newctl;
     }
+
 }
