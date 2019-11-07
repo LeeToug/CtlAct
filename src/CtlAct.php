@@ -15,8 +15,7 @@ class CtlAct
      */
     function getaction($model,$controller,$filteraction=[]){
         //需要过滤的action方法
-        $filter = ['_initialize','__construct','getValidate','getCode','beforeAction','fetch','display','assign','engine','validateFailException'
-            ,'validate','success','error','result','redirect','getResponseType','test'];
+        $filter = ['_initialize','__construct'];
         //添加需要过滤的方法
         if(!empty($filteraction)){
             foreach ($filteraction as $va){
@@ -49,7 +48,7 @@ class CtlAct
         foreach($pathList as $key => $value) {
             $controllers[] = basename($value, '.php');
         }
-        $cro_filter = ['Menu','Common','Base','Test','School','Login','index'];
+        $cro_filter = ['Login'];
         $newctl = array_diff($controllers,$cro_filter);
         return $newctl;
     }
